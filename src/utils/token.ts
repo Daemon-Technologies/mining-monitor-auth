@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 const createJwtToken = body => jwt.sign(body, privateTokenForJWT);
 
-exports.createAnonymousJwtToken = () =>
+export const createAnonymousJwtToken = () =>
   createJwtToken({
     "https://hasura.io/jwt/claims": {
       "x-hasura-allowed-roles": [UserTypes.user],
